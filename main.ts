@@ -20,5 +20,7 @@ if (chars.length < 1 || chars.length > 200 || LINE.includes("\n") || LINE.trim()
   throw new Error(`entry line fails the 1-200 char single-line gate (${chars.length} chars)`);
 }
 
+// The program's only output: LINE written verbatim to /output/entry.txt.
+// Nothing else is read, written, or changed by this program.
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", LINE, "utf8");
